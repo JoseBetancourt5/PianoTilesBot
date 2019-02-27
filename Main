@@ -1,0 +1,105 @@
+package tester;
+
+import java.awt.Point;
+import java.util.ArrayList;
+
+public class Main {
+
+	static Mouse m = new Mouse (0,0);
+	public static void main(String[] args) {
+		m.MDK(1250, 5, 5);
+		m.delay(1000);
+		m.MDK(670, 620, 5);
+		//for (int i = 0; i <100000; i++) {
+		//	m.pUpdate();
+		//	System.out.println(m.getColor(m.getX(), m.getY()));
+		//}
+		m.delay(70);
+		Point p = m.search(480, 400, 400, 10, 125, 10, "369fc6").get(0);
+		m.delay(10);
+		m.MDK((int)p.getX(), (int)p.getY(), 5);
+		
+		
+		for (int i = 0; i < 100; i ++) {
+			if (m.getColor(524, 400).compareTo("3")<0) {
+				m.MDK(524, 400, 1);
+			}
+			if (m.getColor(630, 400).compareTo("3")<0) {
+				m.MDK(630, 400, 1);
+			}
+			if (m.getColor(735, 400).compareTo("3")<0) {
+				m.MDK(735, 400, 1);
+			}
+			if (m.getColor(840, 400).compareTo("3")<0) {
+				m.MDK(840, 400, 1);
+			}
+			if (m.getColor(524, 200).compareTo("3")<0) {
+				m.MDK(524, 200, 1);
+			}
+			if (m.getColor(630, 200).compareTo("3")<0) {
+				m.MDK(630, 200, 1);
+			}
+			if (m.getColor(735, 200).compareTo("3")<0) {
+				m.MDK(735, 200, 1);
+			}
+			if (m.getColor(840, 200).compareTo("3")<0) {
+				m.MDK(840, 200, 1);
+			}
+		}
+		int count = 0;
+		for (int i = 0; i < 100000; i ++) {
+			if (m.getColor(480, 200).compareTo("3")<0) {
+				m.MK(524, 200+count);
+			}
+			if (m.getColor(585, 200).compareTo("3")<0) {
+				m.MK(630, 200+count);
+			}
+			if (m.getColor(690, 200).compareTo("3")<0) {
+				m.MK(735, 200+count);
+			}
+			if (m.getColor(795, 200).compareTo("3")<0) {
+				m.MK(840, 200+count);
+			}
+			if (i%120==0) {
+				count+=5;
+			}
+		}
+		
+		
+
+		
+		
+		
+		
+		
+		
+		
+		
+		/*for (int i = 0; i < 10000; i ++) {
+			ArrayList <Point> coors = new <Point> ArrayList();
+			coors = m.search(524, 35, 10, 450, 10, 60, "0");
+			m.delay(5);
+			for (int a = 0; a <coors.size(); a++) {
+				m.MDK((int)coors.get(a).getX(), (int)coors.get(a).getY(), 5);
+			}
+			coors = m.search(630, 35, 10, 450, 10, 60, "0");
+			m.delay(5);
+			for (int a = 0; a <coors.size(); a++) {
+				m.MDK((int)coors.get(a).getX(), (int)coors.get(a).getY(), 5);
+			}
+			coors = m.search(735, 35, 10, 450, 10, 60, "0");
+			m.delay(5);
+
+			for (int a = 0; a <coors.size(); a++) {
+				m.MDK((int)coors.get(a).getX(), (int)coors.get(a).getY(), 5);
+			}
+			coors = m.search(840, 35, 10, 450, 10, 60, "0");
+			m.delay(5);
+			for (int a = 0; a <coors.size(); a++) {
+				m.MDK((int)coors.get(a).getX(), (int)coors.get(a).getY(), 5);
+			}
+		}*/
+
+	}
+
+}
